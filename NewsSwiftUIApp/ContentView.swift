@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// We use news api
+
 struct ContentView: View {
     var body: some View {
         Text("Hello, world!")
