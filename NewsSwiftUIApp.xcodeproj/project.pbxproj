@@ -13,6 +13,7 @@
 		88D841F6272997200010A392 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88D841F5272997200010A392 /* Preview Assets.xcassets */; };
 		88D842012729994A0010A392 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D842002729994A0010A392 /* Article.swift */; };
 		88D8420327299E980010A392 /* NewsAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D8420227299E980010A392 /* NewsAPIResponse.swift */; };
+		88D842072729A0820010A392 /* ArticleRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D842062729A0820010A392 /* ArticleRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		88D841FF272999200010A392 /* news.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = news.json; sourceTree = "<group>"; };
 		88D842002729994A0010A392 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		88D8420227299E980010A392 /* NewsAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPIResponse.swift; sourceTree = "<group>"; };
+		88D842062729A0820010A392 /* ArticleRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRowView.swift; sourceTree = "<group>"; };
+		88D842082729A7F60010A392 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +43,6 @@
 		88D841E22729971D0010A392 = {
 			isa = PBXGroup;
 			children = (
-				88D841FF272999200010A392 /* news.json */,
 				88D841ED2729971D0010A392 /* NewsSwiftUIApp */,
 				88D841EC2729971D0010A392 /* Products */,
 			);
@@ -57,6 +59,7 @@
 		88D841ED2729971D0010A392 /* NewsSwiftUIApp */ = {
 			isa = PBXGroup;
 			children = (
+				88D842082729A7F60010A392 /* Info.plist */,
 				88D841FE272998680010A392 /* API */,
 				88D841FD2729985A0010A392 /* ViewModel */,
 				88D841FC272998450010A392 /* Views */,
@@ -79,6 +82,7 @@
 		88D841FC272998450010A392 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				88D842062729A0820010A392 /* ArticleRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -95,6 +99,7 @@
 		88D841FE272998680010A392 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				88D841FF272999200010A392 /* news.json */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -170,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88D841F12729971D0010A392 /* ContentView.swift in Sources */,
+				88D842072729A0820010A392 /* ArticleRowView.swift in Sources */,
 				88D841EF2729971D0010A392 /* NewsSwiftUIAppApp.swift in Sources */,
 				88D8420327299E980010A392 /* NewsAPIResponse.swift in Sources */,
 				88D842012729994A0010A392 /* Article.swift in Sources */,
@@ -306,12 +312,13 @@
 				DEVELOPMENT_TEAM = V5AXQY3P8H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NewsSwiftUIApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -336,12 +343,13 @@
 				DEVELOPMENT_TEAM = V5AXQY3P8H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NewsSwiftUIApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
