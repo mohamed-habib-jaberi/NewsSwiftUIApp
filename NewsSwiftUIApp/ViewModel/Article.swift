@@ -7,6 +7,8 @@
 
 import Foundation
 
+fileprivate let relativeDateFormatter = RelativeDateTimeFormatter()
+
 struct Article {
     let source: Source
 
@@ -23,7 +25,7 @@ struct Article {
     }
 
     var descriptionText: String {
-        descriptionText ?? ""
+        description ?? ""
     }
 
     var articleURL: URL {
@@ -36,6 +38,12 @@ struct Article {
         }
         return URL(string: urlToImage)
     }
+
+    //computed property
+    var captionText: String {
+        "\(source.name) . \(relativeDateFormatter.localizedString(for: publishedAt, relativeTo: Date()))"
+    }
+
 }
 
 extension Article: Codable{}
@@ -53,7 +61,9 @@ extension Source: Equatable{}
 
 extension Article {
     static var previewData: [Article] {
+
         let previewDataURL = Bundle.main.url(forResource: "news", withExtension: "json")!
+        
         let data = try! Data(contentsOf: previewDataURL)
 
         let jsonDecoder = JSONDecoder()
