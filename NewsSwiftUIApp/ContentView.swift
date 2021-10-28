@@ -11,9 +11,9 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-//        Text("Hello, world!")
-//            .padding()
-        ArticleRowView(article: .previewData[0])
+
+        ArticleListView(articles: Article.previewData)
+
     }
 }
 

@@ -27,6 +27,7 @@ struct ArticleListView: View {
         .listStyle(.plain)
         .sheet(item: $selectedArticle) {
             SafariView(url: $0.articleURL)
+                .edgesIgnoringSafeArea(.bottom)
         }
     }
 }
