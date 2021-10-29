@@ -8,14 +8,25 @@
 import SwiftUI
 
 struct NewsTabView: View {
-    
-    @StateObject var articleNewsVM = ArticleNewsViewModel()
-    
-    var body: some View {
-        NavigationView {
 
+    @StateObject var articleNewsVM = ArticleNewsViewModel()
+
+    private var articles: [ Article] {
+
+        if case let .success(articles) = articleNewsVM.phase {
+            return articles
+        } else {
+            return []
         }
     }
+
+    var body: some View {
+        NavigationView {
+            ArticleListView(articles: articles)
+        }
+    }
+
+
 }
 
 struct NewsTabView_Previews: PreviewProvider {

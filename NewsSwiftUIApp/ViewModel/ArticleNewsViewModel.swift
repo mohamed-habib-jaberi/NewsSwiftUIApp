@@ -11,6 +11,13 @@ enum DataFetchPhase<T>{
     case empty
     case success(T)
     case failure(Error)
+    case med
+}
+
+enum Med{
+    case emptymed
+    case successmed
+
 }
 
 @MainActor
@@ -21,14 +28,19 @@ class ArticleNewsViewModel: ObservableObject {
     @Published var selectedCategory: Category
 
     @Published var phase = DataFetchPhase<[Article]>.empty
+
+    @Published var medd = Med.emptymed
+
     private let newsAPI = NewsAPI.shared
 
     init(articles: [Article]? = nil, selectedCategory: Category = .general){
 
         if let articles = articles {
             self.phase = .success(articles)
+            self.medd = .successmed
         }else{
-            self.phase = .empty
+            //self.phase = .empty
+            self.medd = .emptymed
         }
         self.selectedCategory = selectedCategory
     }
@@ -39,9 +51,6 @@ class ArticleNewsViewModel: ObservableObject {
         do{
             let articles = try await newsAPI.fetch(from: selectedCategory)
             phase = .success(articles)
-//            DispatchQueue.main.async {
-//
-//            }
         }catch{
             phase = .failure(error)
         }
