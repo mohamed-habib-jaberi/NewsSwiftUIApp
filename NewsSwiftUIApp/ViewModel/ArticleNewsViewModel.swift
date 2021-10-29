@@ -14,22 +14,11 @@ enum DataFetchPhase<T>{
     case med
 }
 
-enum Med{
-    case emptymed
-    case successmed
-
-}
-
 @MainActor
 class ArticleNewsViewModel: ObservableObject {
 
-   // let articles: [Article]
-
     @Published var selectedCategory: Category
-
     @Published var phase = DataFetchPhase<[Article]>.empty
-
-    @Published var medd = Med.emptymed
 
     private let newsAPI = NewsAPI.shared
 
@@ -37,10 +26,9 @@ class ArticleNewsViewModel: ObservableObject {
 
         if let articles = articles {
             self.phase = .success(articles)
-            self.medd = .successmed
+
         }else{
-            //self.phase = .empty
-            self.medd = .emptymed
+            self.phase = .empty
         }
         self.selectedCategory = selectedCategory
     }

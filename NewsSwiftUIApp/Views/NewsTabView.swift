@@ -20,14 +20,28 @@ struct NewsTabView: View {
         }
     }
 
-    var body: some View {
-        NavigationView {
-            ArticleListView(articles: articles)
+    @ViewBuilder
+    private var overlayView: some View {
+        switch articleNewsVM.phase {
+        case .empty:  ProgressView()
+        default: EmptyView()
         }
     }
 
-
+    // MARK: - body
+    var body: some View {
+        NavigationView {
+            ArticleListView(articles: articles)
+                .onAppear(perform: {
+                    async{
+                        await articleNewsVM.loadArticles()
+                    }
+                })
+                .navigationTitle(articleNewsVM.selectedCategory.text)
+        }
+    }
 }
+
 
 struct NewsTabView_Previews: PreviewProvider {
     static var previews: some View {
