@@ -23,7 +23,17 @@ struct NewsTabView: View {
     @ViewBuilder
     private var overlayView: some View {
         switch articleNewsVM.phase {
-        case .empty:  ProgressView()
+        case .empty: ProgressView()
+            
+        case .success(let articles) where articles.isEmpty:
+
+             EmptyPlaceholderView(text: "No articles", image: nil)
+
+        case .failure(let error):
+           RetryView(text: error.localizedDescription) {
+                // TODO: refresh the news API
+
+            }
         default: EmptyView()
         }
     }
