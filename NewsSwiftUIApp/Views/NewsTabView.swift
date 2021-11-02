@@ -42,6 +42,7 @@ struct NewsTabView: View {
     var body: some View {
         NavigationView {
             ArticleListView(articles: articles)
+                .overlay(overlayView)
                 .onAppear(perform: {
                     async{
                         await articleNewsVM.loadArticles()
