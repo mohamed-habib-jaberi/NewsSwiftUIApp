@@ -20,6 +20,7 @@ struct NewsTabView: View {
         }
     }
 
+    // MARK: - overlayView
     @ViewBuilder
     private var overlayView: some View {
         switch articleNewsVM.phase {
@@ -27,10 +28,10 @@ struct NewsTabView: View {
             
         case .success(let articles) where articles.isEmpty:
 
-             EmptyPlaceholderView(text: "No articles", image: nil)
+            EmptyPlaceholderView(text: "No articles", image: nil)
 
         case .failure(let error):
-           RetryView(text: error.localizedDescription) {
+            RetryView(text: error.localizedDescription) {
                 // TODO: refresh the news API
 
             }
@@ -52,7 +53,6 @@ struct NewsTabView: View {
         }
     }
 }
-
 
 struct NewsTabView_Previews: PreviewProvider {
     static var previews: some View {
