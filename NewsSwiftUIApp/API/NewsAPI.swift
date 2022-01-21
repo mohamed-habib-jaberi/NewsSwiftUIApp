@@ -12,12 +12,17 @@ struct NewsAPI {
     static let shared = NewsAPI()
 
     // MARK: - Initialisation
+
     private init(){}
 
+
+
+    
     private let apiKey = "apikey"
     private let session = URLSession.shared
 
     private let jsonDecoder: JSONDecoder = {
+        print("test")
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
         return decoder
